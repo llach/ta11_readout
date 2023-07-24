@@ -8,13 +8,13 @@ import numpy as np
 import sys
 
 from _collections import deque
-from ta11_readout.msg import TA11
+from std_msgs.msg import Float64MultiArray
 from ta11_readout.srv import GetForceThreshold, GetForceThresholdResponse
 
 topic = '/ta11'
 
 rospy.init_node('ta11_tactile', anonymous=True)
-pub = rospy.Publisher(topic, TA11, queue_size=1)
+pub = rospy.Publisher(topic, Float64MultiArray, queue_size=1)
 
 thresh_srv = None
 
@@ -121,12 +121,8 @@ try:
                 latest_values = [deque(maxlen=SMOOTHING) for _ in range(numChannels)]
 
         if calibrated:
-            m = TA11()
-            m.header.frame_id = "base_link"
-            m.header.stamp = rospy.Time.now()
-
-            m.frame_names = sensor_frames
-            m.sensor_values = processed_values
+            m = Float64MultiArray()
+            m.data = processed_values
 
             pub.publish(m)
 finally:

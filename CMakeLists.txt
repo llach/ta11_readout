@@ -15,6 +15,7 @@ add_message_files(
         FILES
         TA11.msg
         TA11Debug.msg
+        ModelDebug.msg
 )
 
 add_service_files(
