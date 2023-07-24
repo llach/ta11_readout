@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+   <node name="publish_ta11" pkg="ta11_readout" type="publish_ta11.py" required="true" output="screen">
+	    <rosparam command="load" file="$(find ta11_readout)/config/ta11-mounted.yaml" />
+   </node>
+</launch>

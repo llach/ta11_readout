@@ -1,0 +1,4 @@
+scaling: 1000.0
+smoothing: 4
+gainIndex: 1
+calibrationTime: 1000

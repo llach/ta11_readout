@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ta11_readout</name>
+  <version>0.0.1</version>
+  <description>Reads TA11 sensors via LabJack U6 and publishes calibrated samples</description>
+
+  <maintainer email="llach@techfak.uni-bielefeld.de">Luca Lach</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>message_runtime</depend>
+
+</package>
