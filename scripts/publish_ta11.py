@@ -122,7 +122,7 @@ try:
 
         if calibrated:
             m = Float64MultiArray()
-            m.data = processed_values
+            m.data = processed_values[::-1]
 
             pub.publish(m)
 finally:
